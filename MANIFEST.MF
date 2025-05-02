@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: sim.Launcher_Doxy_PEP
+Class-Path: . Launcher_Doxy_PEP_lib/
+

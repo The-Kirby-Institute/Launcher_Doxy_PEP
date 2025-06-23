@@ -58,16 +58,16 @@ These components can be located anywhere, provided paths are correctly set in si
 A possible set up could be:
 <pre>
 Network/
-└── <i>Partnership network CSVs</i>
+└── <b>i>Partnership network CSVs</i></b>
 Executable/
 ├── ClusterModel_lib/
-│   └── <i>class libraries use by ClusterModel.jar</i>
+│   └── <b><i>class libraries use by ClusterModel.jar</i>/b>
 ├── ClusterModel.jar
 └── Launcher_Doxy_PEP.jar
 WorkingDir/
 ├── simSpecificSim.prop
 ├── simSpecificSwitch.prop
-└── Seed_List.csv <i>for example</i>
+└── Seed_List.csv <b><i>for example</i></b>
 </pre>
 ### Network
 This component—potentially organised as a standalone directory—stores the partnership network utilised by the model. For more information on the definition of a network and the various methods available to generate one, refer to the Package_ClusterModel documentation.
@@ -81,13 +81,16 @@ Once the network is generated and placed in the appropriate directory, you must 
 See the section on [simSpecificSim.prop](#simspecificsimprop) or a more detailed explanation.
    
 ### Executable 
-To be updated
-
-#### Usage
-```
-java -jar Launcher_Doxy_PEP.jar Working_Directory <-export_skip_backup> <-printProgress> <-seedMap=SEED_MAP>
-```
-
+To execute the model, use the following Java command:
+<pre>
+java -jar Launcher_Doxy_PEP.jar <b><i>File_Path_Working_Directory</i></b> [-export_skip_backup] [-printProgress] [-seedMap=<b>SEED_MAP</b>]
+</pre>
+Arguments:
+* <pre><b><i>File_Path_Working_Directory</i></b>: (Required) Path to the working directory where the simulation will run.
+* <pre>-export_skip_backup</pre>: (Optional) Skips the creation of backup files for each snapshot.
+* <pre>-printProgress</pre>: (Optional) Displays simulation progress in the console output.
+* <pre>-seedMap=SEED_MAP</pre>: (Optional) Specifies the path to a custom seed map file.
+ 
 ### Working directory
 To be updated
 

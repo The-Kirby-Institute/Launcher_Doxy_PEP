@@ -86,7 +86,7 @@ To execute the model, use the following Java command:
 java -jar Launcher_Doxy_PEP.jar <b><i>File_Path_Working_Directory</i></b> [-export_skip_backup] [-printProgress] [-seedMap=<b>SEED_MAP</b>]
 </pre>
 Arguments:
-* <pre><b><i>File_Path_Working_Directory</i></b>: (Required) Path to the working directory where the simulation will run.
+* <pre><b><i>File_Path_Working_Directory</i></b></pre>: (Required) Path to the working directory where the simulation will run.
 * <pre>-export_skip_backup</pre>: (Optional) Skips the creation of backup files for each snapshot.
 * <pre>-printProgress</pre>: (Optional) Displays simulation progress in the console output.
 * <pre>-seedMap=SEED_MAP</pre>: (Optional) Specifies the path to a custom seed map file.

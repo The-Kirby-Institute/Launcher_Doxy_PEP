@@ -58,10 +58,10 @@ These components can be located anywhere, provided paths are correctly set in si
 A possible set up could be:
 <pre>
 Network/
-└── <b>i>Partnership network CSVs</i></b>
+└── <b><i>Partnership network CSVs</i></b>
 Executable/
 ├── ClusterModel_lib/
-│   └── <b><i>class libraries use by ClusterModel.jar</i>/b>
+│   └── <b><i>class libraries use by ClusterModel.jar</i></b>
 ├── ClusterModel.jar
 └── Launcher_Doxy_PEP.jar
 WorkingDir/

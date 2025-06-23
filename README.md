@@ -44,7 +44,7 @@ Model parameters are defined in:
 * simSpecificSwitch.prop (if present)
 * User defined SEED_MAP file (if present)
 
-See [Working directory](#set-up-working-directory) for setup details.
+See [Working directory](#working-directory) for setup details.
 
 ## Set up
 The model consists of three main components:
@@ -78,7 +78,7 @@ Once the network is generated and placed in the appropriate directory, you must 
 ```xml
 <entry key="PROP_CONTACT_MAP_LOC">...</entry>
 ``` 
-See the section [below](#set-up-working-directory-simSpecificSim.prop) or a more detailed explanation of the simSpecificSim.prop configuration.
+See the section [below](#simSpecificSim.prop) or a more detailed explanation of the simSpecificSim.prop configuration.
    
 ### Executable 
 To be updated

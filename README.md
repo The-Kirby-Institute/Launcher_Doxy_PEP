@@ -78,7 +78,7 @@ Once the network is generated and placed in the appropriate directory, you must 
 ```xml
 <entry key="PROP_CONTACT_MAP_LOC">...</entry>
 ``` 
-See the section [below](#simSpecificSim.prop) or a more detailed explanation of the simSpecificSim.prop configuration.
+See the section [below](#simspecificsimprop) or a more detailed explanation of the simSpecificSim.prop configuration.
    
 ### Executable 
 To be updated

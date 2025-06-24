@@ -49,9 +49,9 @@ See [Working directory](#working-directory) for setup details.
 ## Set up
 The model consists of three main components:
 
-* Network
-* Executable
-* Working Directory
+* [Network](#network)
+* [Executable](#executable)
+* [Working Directory](#working-directory)
 
 These components can be located anywhere, provided paths are correctly set in simSpecificSim.prop and/or input arguments. For clarity and reusability, it's recommended to keep at least the working directory separate.
 
@@ -69,6 +69,34 @@ WorkingDir/
 ├── simSpecificSwitch.prop
 └── Seed_List.csv <b><i>for example</i></b>
 </pre>
+
+### Quick start 
+
+1. Generate Network Files
+   Create the required network file(s) and place them in the Network folder.
+
+2. Download ClusterModel Executable
+   Download ClusterModel.jar from the [Package_ClusterModel](https://github.com/The-Kirby-Institute/Package_ClusterModel) GitHub repository and place it in the Executable folder.
+
+3. Add Required Libraries
+   Download the necessary class libraries as specified in the Package_ClusterModel documentation. Place them in the <b>ClusterModel_lib</b> folder inside the Executable directory.
+
+4. Add Launcher Executable
+   Place Launcher_Doxy_PEP.jar in the Executable folder.
+
+5. Set Up Working Directory
+   Ensure your working directory contains an XML file named simSpecificSim.prop. If needed, also include simSpecificSwitch.prop.
+
+6. (Optional) Prepare Seed List
+   Generate a seed list (a CSV file), if required, for your simulation.
+
+7. Configure Simulation Settings
+   Edit simSpecificSim.prop to update file paths and adjust simulation parameters as needed.
+
+8. Run the Model
+   Execute the model (see [Executable](#executable). If successful, the model should run and results will be generated in the working directory.
+
+
 ### Network
 This component—potentially organised as a standalone directory—stores the partnership network utilised by the model. For more information on the definition of a network and the various methods available to generate one, refer to the Package_ClusterModel documentation.
 

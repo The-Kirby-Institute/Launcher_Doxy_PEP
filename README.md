@@ -58,7 +58,7 @@ These components can be located anywhere, provided paths are correctly set in si
 A possible set up could be:
 <pre>
 Network/
-└── <b><i>Partnership network CSVs</i></b>
+└── <b><i>Partnership network and risk groups CSVs</i></b>
 Executable/
 ├── ClusterModel_lib/
 │   └── <b><i>class libraries use by ClusterModel.jar</i></b>
@@ -73,7 +73,7 @@ WorkingDir/
 ### Quick start 
 
 1. Generate Network Files
-   Create the required network file(s) and place them in the Network folder.
+   Create the required network, and if required, associated risk groups files, and place them in the Network folder.
 
 2. Download ClusterModel Executable
    Download ClusterModel.jar from the [Package_ClusterModel](https://github.com/The-Kirby-Institute/Package_ClusterModel) GitHub repository and place it in the Executable folder.
@@ -131,9 +131,33 @@ Optionally, the directory may also include:
 Both simSpecificSwitch.prop and seed list files follow the same format and purpose as those used in the  [Package_ClusterModel](https://github.com/The-Kirby-Institute/Package_ClusterModel). Please refer to its documentation for further details.
 
 #### simSpecificSim.prop
+This model extends the _Runnable_ClusterModel_MultiTransmission_ class from the Package_ClusterModel package. As such, most parameter configurations applicable to _Runnable_ClusterModel_MultiTransmission_ are also relevant here. In particular, settings related to sexual behavior, STI natural history, and testing remain unchanged. For a comprehensive description of these parameters, please refer to the documentation for Package_ClusterModel.
 
-To be update
+In addition to the standard parameters, this model supports four additional entries under simSpecificSim.prop:
 
+```xml
+<entry key="PROP_PEP_START_AT">...</entry>
+<entry key="PROP_PEP_EFFICACY">...</entry>
+<entry key="PROP_PEP_PERSISTENCE_ADHERENCE">.../entry>
+<entry key="PROP_PEP_UPTAKE">...</entry>
+```
+These parameters are specific to Doxy-PEP (Doxycycline Post-Exposure Prophylaxis) modeling and should be configured according to your simulation scenario. The following table outlines each parameter, its type, description, and example usage:
+
+These parameters are specific to Doxy-PEP (Doxycycline Post-Exposure Prophylaxis) modeling and should be configured according to your simulation scenario.
+
+| **Property Name**               | **Type**           | **Description**                                                                                                                                                                                                                                                                                                                                                                     | **Example** |
+|--------------------------------|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|
+| `PROP_PEP_START_AT`| Integer        | The model time (in days) when Doxy-PEP becomes available.                                                                                                                                                                                                                                                                                                                           | `<entry key="PROP_PEP_START_AT">5840</entry>` |
+| `PROP_PEP_EFFICACY`| Array of float | Protective efficacy of Doxy-PEP for each infection type. | `[0.77, 0.22, 0.78]` means 77% efficacy for infection 0, 22% for infection 1, and 78% for infection 2.                                                                                                                                                                                                           | `<entry key="PROP_PEP_EFFICACY">[0.77, 0.22, 0.78]</entry>` |
+| `PROP_PEP_PERSISTENCE_ADHERENCE` | Array of double  | Defines duration of Doxy-PEP usage and adherence. Format: `[mean, sd, adherence]`| • `<entry key="PROP_PEP_PERSISTENCE_ADHERENCE">[180, 180, 1]</entry>` → duration from Gamma(mean=180, sd=180), 100% adherence <br>• `<entry key="PROP_PEP_PERSISTENCE_ADHERENCE">[180, -200, 0.5]</entry>` → duration from Uniform(180, 200), 50% adherence.<br>• `<entry key="PROP_PEP_PERSISTENCE_ADHERENCE">[180, 0, 0.5]</entry>` → fixed duration of 180 days, 50% adherence|
+| `PROP_PEP_UPTAKE` | Array of float| Parameters governing Doxy-PEP uptake upon STI testing. Format: `[HIV/PrEP, Syphilis, 2xSTI, PartnerAdj, PriorUseAdj, NoPriorUseAdj]`|``<entry key="PROP_PEP_UPTAKE">[0.1, 0.2, 0.3, 1.5, 0.6, 0.7]</entry>` means:<br>• 10% uptake for HIV/PrEP<br>• 20% for syphilis<br>• 30% for 2 STIs in 12 months<br>• Adjusted ×1.5 if >5 partners<br>• ×0.6 if used Doxy-PEP before<br>• ×0.7 if not used before |
+
+
+
+
+
+* PROP_PEP_START_AT
+  The time when DOXY PEP was introduced to the model
 
 
 ## Publication

@@ -133,6 +133,17 @@ Both simSpecificSwitch.prop and seed list files follow the same format and purpo
 #### simSpecificSim.prop
 This model extends the _Runnable_ClusterModel_MultiTransmission_ class from the Package_ClusterModel package. As such, most parameter configurations applicable to _Runnable_ClusterModel_MultiTransmission_ are also relevant here. In particular, settings related to sexual behavior, STI natural history, and testing remain unchanged. For a comprehensive description of these parameters, please refer to the documentation for Package_ClusterModel.
 
+For _Runnable_ClusterModel_Prophylaxis_, the model assumes four risk groups based on testing patterns, defined as follows:
+
+| ** Risk Group Index** | ** Definition **|
+| --- | --- |
+| 0 | HIV+ |
+| 1 | HIV-, using HIV PrEP |
+| 2 | HIV-, not using HIV PrEP|
+| 3 | Low risk |  
+
+Risk group allocation occurs before the simulation starts and should ideally be defined in the file: RiskGrp_Map_<b>CMAP_SEED</b>.csv located in the Network folder or working directory.
+
 In addition to the standard parameters, this model supports four additional entries under simSpecificSim.prop:
 
 ```xml
@@ -151,14 +162,6 @@ These parameters are specific to Doxy-PEP (Doxycycline Post-Exposure Prophylaxis
 | `PROP_PEP_EFFICACY`| Array of float | Protective efficacy of Doxy-PEP for each infection type. | `<entry key="PROP_PEP_EFFICACY">[0.77, 0.22, 0.78]</entry>` means 77% efficacy for infection 0, 22% for infection 1, and 78% for infection 2.| 
 | `PROP_PEP_PERSISTENCE_ADHERENCE` | Array of double  | Defines duration of Doxy-PEP usage and adherence. Format: `[mean, sd, adherence]`| • `<entry key="PROP_PEP_PERSISTENCE_ADHERENCE">[180, 180, 1]</entry>` → duration from Gamma(mean=180, sd=180), 100% adherence <br>• `<entry key="PROP_PEP_PERSISTENCE_ADHERENCE">[180, -200, 0.5]</entry>` → duration from Uniform(180, 200), 50% adherence.<br>• `<entry key="PROP_PEP_PERSISTENCE_ADHERENCE">[180, 0, 0.5]</entry>` → fixed duration of 180 days, 50% adherence|
 | `PROP_PEP_UPTAKE` | Array of float| Parameters governing Doxy-PEP uptake upon STI testing. Format: `[HIV/PrEP, Syphilis, 2xSTI, PartnerAdj, PriorUseAdj, NoPriorUseAdj]`|``<entry key="PROP_PEP_UPTAKE">[0.1, 0.2, 0.3, 1.5, 0.6, 0.7]</entry>` means:<br>• 10% uptake for HIV/PrEP<br>• 20% for syphilis<br>• 30% for 2 STIs in 12 months<br>• Adjusted ×1.5 if >5 partners<br>• ×0.6 if used Doxy-PEP before<br>• ×0.7 if not used before |
-
-
-
-
-
-* PROP_PEP_START_AT
-  The time when DOXY PEP was introduced to the model
-
 
 ## Publication
 To be updated

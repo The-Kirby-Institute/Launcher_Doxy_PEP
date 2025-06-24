@@ -109,7 +109,7 @@ Once the network is generated and placed in the appropriate directory, you must 
 See the section on [simSpecificSim.prop](#simspecificsimprop) or a more detailed explanation.
    
 ### Executable 
-To execute the model, use the following Java command:
+To run the model, use the following Java command (replace items in <b>bold</b> with your specific setup):
 <pre>
 java -jar Launcher_Doxy_PEP.jar <b><i>File_Path_Working_Directory</i></b> [-export_skip_backup] [-printProgress] [-seedMap=<b>SEED_MAP</b>]
 </pre>
@@ -120,10 +120,21 @@ Arguments:
 * -seedMap=<b>SEED_MAP</b>: (Optional) Specifies the path (<b>SEED_MAP</b>) to a custom seed map file.
  
 ### Working directory
-To be updated
+The working directory **must** contain one XML file named simSpecificSim.prop, which defines the simulation settings and default model parameters.
 
+Optionally, the directory may also include:
+
+* simSpecificSwitch.prop: Specifies when and how parameter values change during the simulation.
+* One or more seed list CSV files (either in the root or a subfolder of Working directory)
+
+
+Both simSpecificSwitch.prop and seed list files follow the same format and purpose as those used in the  [Package_ClusterModel](https://github.com/The-Kirby-Institute/Package_ClusterModel). Please refer to its documentation for further details.
 
 #### simSpecificSim.prop
+
+To be update
+
+
 
 ## Publication
 To be updated

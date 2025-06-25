@@ -135,7 +135,7 @@ This model extends the _Runnable_ClusterModel_MultiTransmission_ class from the 
 
 For _Runnable_ClusterModel_Prophylaxis_, the model assumes four risk groups based on testing patterns, defined as follows:
 
-| ** Risk Group Index** | ** Definition **|
+| **Risk Group Index** | **Definition**|
 | --- | --- |
 | 0 | HIV+ |
 | 1 | HIV-, using HIV PrEP |
@@ -152,8 +152,6 @@ In addition to the standard parameters, this model supports four additional entr
 <entry key="PROP_PEP_PERSISTENCE_ADHERENCE">.../entry>
 <entry key="PROP_PEP_UPTAKE">...</entry>
 ```
-These parameters are specific to Doxy-PEP (Doxycycline Post-Exposure Prophylaxis) modeling and should be configured according to your simulation scenario. The following table outlines each parameter, its type, description, and example usage:
-
 These parameters are specific to Doxy-PEP (Doxycycline Post-Exposure Prophylaxis) modeling and should be configured according to your simulation scenario.
 
 | **Property Name**               | **Type**           | **Description**                                                                                                                                                                                                                                                                                                                                                                     | **Examples** |
@@ -164,7 +162,8 @@ These parameters are specific to Doxy-PEP (Doxycycline Post-Exposure Prophylaxis
 | `PROP_PEP_UPTAKE` | Array of float| Parameters governing Doxy-PEP uptake upon STI testing. Format: `[HIV/PrEP, Syphilis, 2xSTI, PartnerAdj, PriorUseAdj, NoPriorUseAdj]`|``<entry key="PROP_PEP_UPTAKE">[0.1, 0.2, 0.3, 1.5, 0.6, 0.7]</entry>` means:<br>• 10% uptake for HIV/PrEP<br>• 20% for syphilis<br>• 30% for 2 STIs in 12 months<br>• Adjusted ×1.5 if >5 partners<br>• ×0.6 if used Doxy-PEP before<br>• ×0.7 if not used before |
 
 ## Publication
-To be updated
+
+* Hui BB, Medland N, Ryder N, Wareing H, Regan D, Gray RT. Reducing STI Burden in MSM with Doxy-PEP: Evidence from Individual-Based Modelling in Australia (Preprint). medRxiv. 2025:2025.06.24.25330172. doi: https://doi.org/10.1101/2025.06.24.25330172 
 
 
 ## Acknowledgments 

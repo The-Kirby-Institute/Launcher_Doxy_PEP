@@ -91,6 +91,11 @@ public class Runnable_ClusterModel_Prophylaxis extends Abstract_Runnable_Cluster
 			persistenceDist = generateGammaDistribution(rng_PEP, persistence);
 		}
 	}
+	
+	private int getGenderType(int pid) {
+		return getPersonGrp(pid);
+	}
+	
 
 	@Override
 	protected void simulate_non_infectious_act(int currentTime, ContactMap cMap, HashMap<String, int[]> acted_today) {
@@ -425,6 +430,7 @@ public class Runnable_ClusterModel_Prophylaxis extends Abstract_Runnable_Cluster
 		String key, fileName;
 		HashMap<Integer, int[]> countMap;
 		String filePrefix = this.getRunnableId() == null ? "" : this.getRunnableId();
+		int NUM_GENDER = NUM_GRP;
 
 		// PEP Usage
 		countMap = (HashMap<Integer, int[]>) sim_output.get(SIM_OUTPUT_KEY_PEP_COVERAGE);
